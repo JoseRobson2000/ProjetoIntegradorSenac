@@ -1,20 +1,43 @@
-import Image from "next/image";
+export default function Produto(props) {
+  return (
+    <div className="col-3">
+      <div className="card shadow-sm">
 
-export default function Produto (){
-    return(
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-body-secondary">Last updated 3 mins ago</small>
+        <div className="text-center"
+          style={{ width: "100%", height: 200,  }}
+        >
+          <img src={props.imagem} alt="Foto" width="auto" height="100%"/>
+          
+          
+        </div>
+
+        <div className="card-body">
+          <div className="card-body">
+            <h2>{props.nome}</h2>
+            <p className="card-text">
+              {props.descricao}
+            </p>
+            <div className="d-flex justify-content-between align-items-center">
+              {
+                props.disponivel == false 
+                  ? <span className="badge text-bg-secondary">Indisponível</span>
+                  : null
+              }
+              {
+                props.novidade == true
+                  ? <span className="badge text-bg-success">Novidade</span>
+                  : null
+              }
+              
+            </div>
+            <div className="text-end mt-3">
+              <h3 className="text-body-secondary">
+                {props.preco}
+              </h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-    )
+  );
 }
