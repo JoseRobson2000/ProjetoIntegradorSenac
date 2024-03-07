@@ -32,7 +32,7 @@ export default function Produto(props) {
             </div>
             <div className="text-end mt-3">
               <h3 className="text-body-secondary">
-                {props.preco}
+                {Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.preco)}
               </h3>
             </div>
           </div>

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function Cabecalho() {
+export default function Cabecalho(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="">
           Logotipo
         </a>
         <button
@@ -32,16 +32,13 @@ export default function Cabecalho() {
             </li>
             
           </ul>
-          <form className="d-flex" role="search">
+          <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
               placeholder="Pesquisa"
-              aria-label="Search"
+              onChange={props.pesquisar}
             />
-            <button className="btn btn-outline-success" type="submit">
-              Pesquisar
-            </button>
           </form>
         </div>
       </div>
