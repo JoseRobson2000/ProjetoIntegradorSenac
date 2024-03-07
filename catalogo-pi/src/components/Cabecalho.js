@@ -1,11 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Cabecalho(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="">
-          Logotipo
+        <a className="navbar-brand" href="g" wid>
+          <Image src={"/assets/Logo papelaria2.png" } width={150} height={40}/>
         </a>
         <button
           className="navbar-toggler"
