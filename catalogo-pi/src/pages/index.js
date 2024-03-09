@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <Cabecalho pesquisar={handlePesquisar}/>
-      <div className="container-fluid mt-2">
+      <div className="container-fluid mt-2 fundo">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           {listaProdutoFiltrado.map((dado, index) => (
             <Produto

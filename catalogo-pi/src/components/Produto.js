@@ -1,6 +1,6 @@
 export default function Produto(props) {
   return (
-    <div className="col-3">
+    <div className="col-12 col-lg-3">
       <div className="card shadow-sm">
 
         <div className="text-center"

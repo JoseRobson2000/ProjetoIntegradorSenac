@@ -33,6 +33,8 @@ export default function cadastro() {
     } else {
       dadosProduto[e.target.id] = e.target.value
     }
+
+    dadosProduto.preco=dadosProduto.preco.replace(",",".")
     
     setDadosProduto(dadosProduto)
 
@@ -42,7 +44,7 @@ export default function cadastro() {
   return (
     <>
       <Cabecalho />
-      <div className="container-fluid">
+      <div className="container-fluid fundo">
         <div className="row">
             <CustomInputLabel id="nome" onChange={handleChange} texto="Nome" col="8" />
             <CustomInputLabel id="preco" onChange={handleChange} texto="Preço" col="4" />
