@@ -3,9 +3,12 @@ import CustomCheckboxLabel from "@/components/CustomCheckboxLabel";
 import CustomInputLabel from "@/components/CustomInputLabel";
 import CustomTextAreaLabel from "@/components/CustomTextAreaLabel";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function cadastro() {
+
+  const router = useRouter()
 
   const [dadosProduto, setDadosProduto] = useState({
                                                       id : 0,
@@ -18,9 +21,14 @@ export default function cadastro() {
 
   function handleSalvar()
   {
+    dadosProduto.preco=dadosProduto.preco.replace(",",".")
     //Enviaremos o post para a API
     axios.post("https://localhost:7282/api/Produto", dadosProduto)
-        .then(res => console.log(res))
+        .then(res => {
+          console.log(res)
+          alert("Produto salvo com sucesso!");
+          router.push("/")
+        })
   }
 
   function handleChange(e){
@@ -34,7 +42,7 @@ export default function cadastro() {
       dadosProduto[e.target.id] = e.target.value
     }
 
-    dadosProduto.preco=dadosProduto.preco.replace(",",".")
+    
     
     setDadosProduto(dadosProduto)
 
